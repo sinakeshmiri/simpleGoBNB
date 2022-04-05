@@ -71,31 +71,3 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 	}
 	return cache, nil
 }
-
-/*
-	func RenderTemplate(writer http.ResponseWriter, tmpl string) {
-		var parsedTemplate, _ = template.ParseFiles("./templates/" + tmpl)
-		err := parsedTemplate.Execute(writer, nil)
-		if err != nil {
-			fmt.Println("error in rendering", err)
-			return
-		}
-	}*/
-/*func RenderTemplate(writer http.ResponseWriter, tmpl string) {
-
-	templateCache, err := CreateTemplateCache()
-	if err != nil {
-		log.Fatal(err)
-	}
-	templ, ok := templateCache[tmpl]
-	if !ok {
-		log.Fatal(err)
-	}
-	myBuffer := new(bytes.Buffer)
-	_ = templ.Execute(myBuffer, nil)
-	_, err = myBuffer.WriteTo(writer)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-}*/
