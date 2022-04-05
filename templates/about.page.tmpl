@@ -1,0 +1,12 @@
+{{template "base" .}}
+{{define "content"}}
+<h1> aBout </h1>
+<h1> {{index .TextData "content"}} </h1>
+<p>
+{{if ne (index .TextData "remote_IP") ""}}
+    your IP : {{index .TextData "remote_IP"}}
+{{else}}
+    I don't know :)
+{{end}}
+</p>
+{{end}}
